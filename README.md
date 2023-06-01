@@ -44,14 +44,55 @@ A0 = Y7 + Y5 + Y3 + Y1 <br>
 
 
 ## Program:
+~~~
+1.Decoder
+module exp8a(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+input a,b,c ;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0=((~a)&(~b)&(~c));
+assign d1=((~a)&(~b)&c);
+assign d2=((~a)&b&(~c));
+assign d3=((~a)&b&c);
+assign d4=(a&(~b)&(~c));
+assign d5=(a&(~b)&(c));
+assign d6=(a&b&(~c));
+assign d7=(a&b&c);
+endmodule 
 
+2.Encoder
+module exp8b(y0,y1,y2,y3,y4,y5,y6,y7,a0,a1,a2);
+input y0,y1,y2,y3,y4,y5,y6,y7;
+output a0,a1,a2;
+assign a0=(y7|y5|y3|y1);
+assign a1=(y7|y6|y3|y2);
+assign a2=(y7|y6|y5|y4);
+endmodule
+~~~
 
 ## RTL Schematic:
+
+1.Decoder
+
+![Screenshot 2023-06-01 181928](https://github.com/Nandhakumar22008968/encoder-decoder/assets/129037794/d1436ca2-1cf6-4701-b707-9aecda2dc639)
+
+2.Encoder
+
+![Screenshot 2023-06-01 184120](https://github.com/Nandhakumar22008968/encoder-decoder/assets/129037794/dc1d3681-b033-4953-9b40-5cf731b49d5f)
+
+
+
 
 
 
 
 ## Timing Diagram:
+1.Decoder
+![Screenshot 2023-06-01 182357](https://github.com/Nandhakumar22008968/encoder-decoder/assets/129037794/cc2b6236-42cc-4136-a5f4-f263106a5ae3)
+
+2.Encoder
+![Screenshot 2023-06-01 184631](https://github.com/Nandhakumar22008968/encoder-decoder/assets/129037794/6b372fee-4aec-4862-9dd3-9ac2b4c0cdf5)
+
+
 
 
 
